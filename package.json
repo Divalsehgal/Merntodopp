@@ -1,0 +1,24 @@
+{
+  "name": "mernbackend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "build":"cd merntodoapp && npm run build",
+    "install-client": "cd merntodoapp && npm install",
+    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=flase npm run install-client && npm run build",
+    "start":"node server.js", 
+    "merntodoapp":"cd merntodoapp && npm start",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently -n 'server,merntodoapp' -c 'red,green'  \"nodemon server.js\" \"npm run merntodoapp\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.15"
+  }
+}
